@@ -6,11 +6,19 @@
   
   <style>
   @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
-  body {font-family: "Source Code Pro", Consolas, monaco, monospace; line-height: 160%; font-size: 18px;  margin: 0; }
+  body {
+
+  font-family: "Source Code Pro", Consolas, monaco, monospace; line-height: 160%; font-size: 18px;  margin: 0; }
   path.link {
   fill: none;
   stroke-width: 14px;
+  
+          
   }
+
+  
+  }
+
   .node:not(:hover) .nodetext {
   display: none;
   }
@@ -26,7 +34,7 @@
 <body>
   <div id="graph"></div>
   <script>
-  fetch('cerc.json').then(res => res.json()).then(data => {
+  fetch('cercc.json').then(res => res.json()).then(data => {
   const Graph = ForceGraph()
   (document.getElementById('graph'))
   .backgroundColor('#fff')
@@ -34,7 +42,8 @@
   .nodeId('id')
   .linkAutoColorBy('value')
   .linkWidth(2)
-  .linkCurvature(0)
+  .linkCurvature(0.5)
+  .dagLevelDistance(90)
     //.linkDistance(500)
   //.linkColor(() => 'rgba(92, 196, 71, 0.7)')
   //  .nodeAutoColorBy('group')
@@ -42,11 +51,11 @@
   //.nodeColor('#000')
   .nodeCanvasObject((node, ctx, globalScale) => {
   const label = node.id;
-  const fontSize = 10;
+  const fontSize = 11;
   ctx.font = `${fontSize}px GillSans`;
   const textWidth = ctx.measureText(label).width;
-  const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize - 0.5); // some padding
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+  const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize - 16); // some padding
+  ctx.fillStyle = 'rgba(255, 255, 255, 1)';
   
   ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
   ctx.textAlign = 'center';
@@ -56,6 +65,8 @@
   
   });
   });
+
+    
   </script>
 </body>
 <!--

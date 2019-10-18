@@ -140,8 +140,8 @@ export default Kapsule({
     backgroundColor: { onChange(color, state) { state.canvas && color && (state.canvas.style.background = color) }, triggerUpdate: false },
     nodeLabel: { default: 'name', triggerUpdate: false },
     linkLabel: { default: 'name', triggerUpdate: false },
-    linkHoverPrecision: { default: 4, triggerUpdate: false },
-    enableNodeDrag: { default: true, triggerUpdate: false },
+    linkHoverPrecision: { default: 40, triggerUpdate: false },
+    enableNodeDrag: { default: true, triggerUpdate: true },
     enableZoomPanInteraction: { default: true, triggerUpdate: false },
     enablePointerInteraction: { default: true, onChange(_, state) { state.hoverObj = null; }, triggerUpdate: false },
     onNodeDrag: { default: () => {}, triggerUpdate: false },
@@ -251,7 +251,7 @@ export default Kapsule({
   },
 
   stateInit: () => ({
-    lastSetZoom: 1,
+    lastSetZoom: 20,
     forceGraph: new CanvasForceGraph(),
     shadowGraph: new CanvasForceGraph()
       .cooldownTicks(0)
@@ -260,6 +260,7 @@ export default Kapsule({
       .isShadow(true),
     colorTracker: new ColorTracker() // indexed objects for rgb lookup
   }),
+
 
   init: function(domNode, state) {
     // Wipe DOM
@@ -330,7 +331,7 @@ export default Kapsule({
           delete(obj.__initialDragPos);
 
           state.forceGraph
-            .d3AlphaTarget(0)   // release engine low intensity
+            .d3AlphaTarget(70)   // release engine low intensity
             .resetCountdown();  // let the engine readjust after releasing fixed nodes
 
           // drag cursor
