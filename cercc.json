@@ -85,7 +85,7 @@
             "group": 18,
             "color": "#6D6D6D"
         },{
-            "id": "Responsive walls",
+            "id": "Responsive Environments",
             "group": 18,
             "color": "#6D6D6D"
         },{
@@ -337,7 +337,7 @@
 
 
         {
-            "source": "Responsive walls",
+            "source": "Responsive Environments",
             "target": "Alice Jarry",
             "value": 11
         }, 
