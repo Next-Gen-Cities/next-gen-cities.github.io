@@ -60,12 +60,12 @@ export default Kapsule({
     linkDirectionalParticleWidth: { default: 4, triggerUpdate: false },
     linkDirectionalParticleColor: { triggerUpdate: false },
     globalScale: { default: 1, triggerUpdate: false },
-    d3AlphaDecay: { default: 70, triggerUpdate: false, onChange(alphaDecay, state) { state.forceLayout.alphaDecay(alphaDecay) }},
+    d3AlphaDecay: { default: 0.0228, triggerUpdate: false, onChange(alphaDecay, state) { state.forceLayout.alphaDecay(alphaDecay) }},
     d3AlphaTarget: { default: 0, triggerUpdate: false, onChange(alphaTarget, state) { state.forceLayout.alphaTarget(alphaTarget) }},
-    d3VelocityDecay: { default: 400, triggerUpdate: false, onChange(velocityDecay, state) { state.forceLayout.velocityDecay(velocityDecay) } },
+    d3VelocityDecay: { default: 0.4, triggerUpdate: false, onChange(velocityDecay, state) { state.forceLayout.velocityDecay(velocityDecay) } },
     warmupTicks: { default: 0, triggerUpdate: false }, // how many times to tick the force engine at init before starting to render
     cooldownTicks: { default: Infinity, triggerUpdate: false },
-    cooldownTime: { default: 150000, triggerUpdate: false }, // ms
+    cooldownTime: { default: 15000, triggerUpdate: false }, // ms
     onLoading: { default: () => {}, triggerUpdate: false },
     onFinishLoading: { default: () => {}, triggerUpdate: false },
     onEngineTick: { default: () => {}, triggerUpdate: false },
@@ -144,7 +144,7 @@ export default Kapsule({
           }
 
           // Draw wider nodes by 1px on shadow canvas for more precise hovering (due to boundary anti-aliasing)
-          const r = Math.sqrt(Math.max(0, getVal(node) || 2)) * state.nodeRelSize + padAmount;
+          const r = Math.sqrt(Math.max(0, getVal(node) || 1)) * state.nodeRelSize + padAmount;
 
           ctx.beginPath();
           ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);

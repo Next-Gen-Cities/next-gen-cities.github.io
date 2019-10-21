@@ -10,7 +10,7 @@ import ColorTracker from 'canvas-color-tracker';
 import CanvasForceGraph from './canvas-force-graph';
 import linkKapsule from './kapsule-link.js';
 
-const HOVER_CANVAS_THROTTLE_DELAY = 80; // ms to throttle shadow canvas updates for perf improvement
+const HOVER_CANVAS_THROTTLE_DELAY = 800; // ms to throttle shadow canvas updates for perf improvement
 const ZOOM2NODES_FACTOR = 4;
 
 // Expose config from forceGraph
@@ -64,7 +64,7 @@ function adjustCanvasSize(state) {
   if (state.canvas) {
     let curWidth = state.canvas.width;
     let curHeight = state.canvas.height;
-    if (curWidth === 800 && curHeight === 500) { // Default canvas dimensions
+    if (curWidth === 800 && curHeight === 450) { // Default canvas dimensions
       curWidth = curHeight = 0;
     }
 
@@ -91,8 +91,8 @@ function adjustCanvasSize(state) {
     // Relative center panning based on 0,0
     const k = d3ZoomTransform(state.canvas).k;
     state.zoom.translateBy(state.zoom.__baseElem,
-      (state.width - curWidth) / 10 / k,
-      (state.height - curHeight) / 10 / k
+      (state.width - curWidth) / 2 / k,
+      (state.height - curHeight) / 2 / k
     );
   }
 }
@@ -140,8 +140,8 @@ export default Kapsule({
     backgroundColor: { onChange(color, state) { state.canvas && color && (state.canvas.style.background = color) }, triggerUpdate: false },
     nodeLabel: { default: 'name', triggerUpdate: false },
     linkLabel: { default: 'name', triggerUpdate: false },
-    linkHoverPrecision: { default: 40, triggerUpdate: false },
-    enableNodeDrag: { default: true, triggerUpdate: true },
+    linkHoverPrecision: { default: 4, triggerUpdate: false },
+    enableNodeDrag: { default: true, triggerUpdate: false },
     enableZoomPanInteraction: { default: true, triggerUpdate: false },
     enablePointerInteraction: { default: true, onChange(_, state) { state.hoverObj = null; }, triggerUpdate: false },
     onNodeDrag: { default: () => {}, triggerUpdate: false },
@@ -157,7 +157,7 @@ export default Kapsule({
   },
 
   aliases: { // Prop names supported for backwards compatibility
-    //stopAnimation: 'pauseAnimation'
+    stopAnimation: 'pauseAnimation'
   },
 
   methods: {
@@ -251,7 +251,7 @@ export default Kapsule({
   },
 
   stateInit: () => ({
-    lastSetZoom: 20,
+    lastSetZoom: 1,
     forceGraph: new CanvasForceGraph(),
     shadowGraph: new CanvasForceGraph()
       .cooldownTicks(0)
@@ -260,7 +260,6 @@ export default Kapsule({
       .isShadow(true),
     colorTracker: new ColorTracker() // indexed objects for rgb lookup
   }),
-
 
   init: function(domNode, state) {
     // Wipe DOM
@@ -300,7 +299,7 @@ export default Kapsule({
 
           // keep engine running at low intensity throughout drag
           if (!d3Event.active) {
-            state.forceGraph.d3AlphaTarget(0.2); // keep engine running at low intensity throughout drag
+            state.forceGraph.d3AlphaTarget(0.3); // keep engine running at low intensity throughout drag
             obj.fx = obj.x; obj.fy = obj.y; // Fix points
           }
 
@@ -331,7 +330,7 @@ export default Kapsule({
           delete(obj.__initialDragPos);
 
           state.forceGraph
-            .d3AlphaTarget(70)   // release engine low intensity
+            .d3AlphaTarget(0)   // release engine low intensity
             .resetCountdown();  // let the engine readjust after releasing fixed nodes
 
           // drag cursor
@@ -349,7 +348,7 @@ export default Kapsule({
 
     state.zoom
       .filter(() => state.enableZoomPanInteraction ? !d3Event.button : false) // disable zoom interaction
-      .scaleExtent([0.1, 1000])
+      .scaleExtent([0.01, 1000])
       .on('zoom', function() {
         const t = d3ZoomTransform(this); // Same as d3.event.transform
         [ctx, shadowCtx].forEach(c => {

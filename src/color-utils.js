@@ -1,9 +1,7 @@
 import { scaleOrdinal } from 'd3-scale';
 import { schemePaired } from 'd3-scale-chromatic';
 
-//const autoColorScale = scaleOrdinal(schemePaired);
-const autoColorScale = scaleSequential(d3.interpolatePiYG);
-
+const autoColorScale = scaleOrdinal(schemePaired);
 
 // Autoset attribute colorField by colorByAccessor property
 // If an object has already a color, don't set it

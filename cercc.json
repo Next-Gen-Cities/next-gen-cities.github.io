@@ -104,6 +104,10 @@
             "id": "Renewable energy",
             "group": 18,
             "color": "#6D6D6D"
+        },{
+            "id": "Climate Change",
+            "group": 18,
+            "color": "#6D6D6D"
         },
 
 
@@ -376,6 +380,49 @@
             "source": "Renewable energy",
             "target": "Chunyan Lai",
             "value": 11
+        }, 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Carly Ziter",
+            "value": 12
+        }, 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Chunyan Lai",
+            "value": 12
+        }, 
+ 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Jing Iris Hu",
+            "value": 12
+        }, 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Ursula Eicker",
+            "value": 12
+        }, 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Mohamed Ouf",
+            "value": 12
+        }, 
+
+
+        {
+            "source": "Climate Change",
+            "target": "Alice Jarry",
+            "value": 12
         }
 
     ]
