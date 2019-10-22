@@ -94,32 +94,33 @@
         .nodeId('id')
           .linkCurvature(0.5)
   .linkWidth(2)
-        .linkAutoColorBy('value')
+        .linkAutoColorBy('color')
 
         .nodeColor(0, 0, 0)
-
+.nodeAutoColorBy('group')
         .nodeCanvasObject((node, ctx, globalScale) => {
           const label = node.id;
-          const fontSize = 15/globalScale;
+          const fontSize = 16/globalScale;
           ctx.font = `${fontSize}px GillSans`;
           const textWidth = ctx.measureText(label).width;
-          const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.1); // some padding
+          const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.001); // some padding
 
 
 
 
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
 
   ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
   //ctx.stroke();
 
-ctx.beginPath();
-  ctx.fillStyle = 'rgba(0, 175, 174, 0.7)'; 
+  ctx.beginPath();
+  ctx.fillStyle = 'rgba(170, 255, 0, 0.6)'; 
+
   //ctx.fillStyle = 'rgba(255, 255, 255, 1)';
 
 
-  ctx.ellipse(node.x, node.y, 2, 2, Math.PI / 4, 0, 2 * Math.PI);
+  ctx.ellipse(node.x, node.y, 4, 4, Math.PI / 4, 0, 2 * Math.PI);
   ctx.fill();
 
 
