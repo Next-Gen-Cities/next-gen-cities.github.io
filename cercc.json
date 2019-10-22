@@ -67,7 +67,7 @@
   ],
   "links": [
 
-    {"source": "ALICE JARRY", "target": "NEXT-GENERATION CITIES", "color": "#2A3FAAB3"},
+    {"source": "ALICE JARRY", "target": "NEXT-GENERATION CITIES", "value" : 8, "color": "#2A3FAAB3"},
     {"source": "URSULA EICKER", "target": "NEXT-GENERATION CITIES", "color": "#008080B3"},
     {"source": "MOHAMED OUF", "target": "NEXT-GENERATION CITIES", "color": "#2ABF00B3"},
     {"source": "JING HU", "target": "NEXT-GENERATION CITIES", "color": "#422893"},
