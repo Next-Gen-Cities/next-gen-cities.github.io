@@ -49,8 +49,8 @@
     {"id": "Building Occupants", "group": 47, "color": "#434343"},
     {"id": "Data Collection", "group": 48, "color": "#434343"},
     {"id": "Data Physicalization", "group": 49, "color": "#434343"},
-    {"id": "Moral Values", "group": 50, "color": "#434343"},
-    {"id": "Citizen Virtues", "group": 51, "color": "#434343"},
+    {"id": "Environmental Ethics", "group": 50, "color": "#434343"},
+    {"id": "Next Generation Virtues", "group": 51, "color": "#434343"},
     {"id": "Algorithms", "group": 52, "color": "#434343"},
     {"id": "Adaptive Materials", "group": 53, "color": "#434343"},
     {"id": "Citizen Science", "group": 54, "color": "#434343"},
@@ -59,7 +59,9 @@
     {"id": "Building Efficiency", "group": 57, "color": "#434343"},
     {"id": "Urban Modeling", "group": 58, "color": "#434343"},
     {"id": "Sensor Networks", "group": 59, "color": "#434343"},
-    {"id": "Smart Grids", "group": 60, "color": "#434343"}
+    {"id": "Smart Grids", "group": 60, "color": "#434343"},
+
+    {"id": "Resilient Communities", "group": 61, "color": "#434343"}
 
 
 
@@ -199,8 +201,8 @@
 
     {"source": "ALICE JARRY", "target": "Data Physicalization", "color": "#2A3FAAB3"},
 
-    {"source": "JING HU", "target": "Moral Values", "color": "#422893"},
-    {"source": "JING HU", "target": "Citizen Virtues", "color": "#422893"},
+    {"source": "JING HU", "target": "Environmental Ethics", "color": "#422893"},
+    {"source": "JING HU", "target": "Next Generation Virtues", "color": "#422893"},
 
     {"source": "ALICE JARRY", "target": "Algorithms", "color": "#2A3FAAB3"},
     {"source": "MOHAMED OUF", "target": "Algorithms", "color": "#2ABF00B3"},
@@ -219,7 +221,9 @@
 
     {"source": "URSULA EICKER", "target": "Zero Carbon Transport", "color": "#008080B3"},
 
-    {"source": "URSULA EICKER", "target": "Smart Grids", "color": "#008080B3"}
+    {"source": "URSULA EICKER", "target": "Smart Grids", "color": "#008080B3"},
+
+    {"source": "JING HU", "target": "Resilient Communities", "color": "#422893"}
 
 
    
