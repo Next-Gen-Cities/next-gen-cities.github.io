@@ -13,7 +13,7 @@
     {"id": "Sustainable Energy", "group": 9, "color": "#434343"},
     {"id": "Resilient Future", "group": 10, "color": "#434343"},
     {"id": "Design Concepts", "group": 11, "color": "#434343"}, 
-    {"id": "Distribution Systems", "group": 12, "color": "#434343"}, 
+    {"id": "Battery Charging Stations", "group": 12, "color": "#434343"}, 
     {"id": "Smart Buildings", "group": 13, "color": "#434343"}, 
     {"id": "Urban Biodiversity", "group": 14, "color": "#434343"}, 
     {"id": "Urban Green Spaces", "group": 15, "color": "#434343"}, 
@@ -61,9 +61,12 @@
     {"id": "Sensor Networks", "group": 59, "color": "#434343"},
     {"id": "Smart Grids", "group": 60, "color": "#434343"},
 
-    {"id": "Resilient Communities", "group": 61, "color": "#434343"}
+    {"id": "Resilient Communities", "group": 61, "color": "#434343"},
 
-
+    {"id": "Traction Motors and Drives", "group": 62, "color": "#434343"},
+    {"id": "Electric Vehicles", "group": 63, "color": "#434343"},
+    {"id": "Energy Networks", "group": 64, "color": "#434343"},
+    {"id": "Intelligent Transportation System", "group": 65, "color": "#434343"}
 
 
   ],
@@ -94,7 +97,7 @@
 
      {"source": "ALICE JARRY", "target": "Design Concepts", "color": "#2A3FAAB3"},
 
-    {"source": "CHUNYAN LAI", "target": "Distribution Systems", "color": "#33CCFF"},
+    {"source": "CHUNYAN LAI", "target": "Battery Charging Stations", "color": "#33CCFF"},
 
     {"source": "MOHAMED OUF", "target": "Smart Buildings", "color": "#2ABF00B3"},
     {"source": "ALICE JARRY", "target": "Smart Buildings", "color": "#2A3FAAB3"},
@@ -152,6 +155,8 @@
     {"source": "MOHAMED OUF", "target": "Infrastructures", "color": "#2ABF00B3"},
     {"source": "ALICE JARRY", "target": "Infrastructures", "color": "#2A3FAAB3"},
     {"source": "URSULA EICKER", "target": "Infrastructures", "color": "#008080B3"},
+    {"source": "CHUNYAN LAI", "target": "Infrastructures", "color": "#33CCFF"},
+
 
     {"source": "ALICE JARRY", "target": "Inclusive Urban Spaces", "color": "#2A3FAAB3"},
     {"source": "URSULA EICKER", "target": "Inclusive Urban Spaces", "color": "#008080B3"},
@@ -223,7 +228,15 @@
 
     {"source": "URSULA EICKER", "target": "Smart Grids", "color": "#008080B3"},
 
-    {"source": "JING HU", "target": "Resilient Communities", "color": "#422893"}
+    {"source": "JING HU", "target": "Resilient Communities", "color": "#422893"},
+
+    {"source": "CHUNYAN LAI", "target": "Traction Motors and Drives", "color": "#33CCFF"},
+
+    {"source": "CHUNYAN LAI", "target": "Electric Vehicles", "color": "#33CCFF"},
+
+    {"source": "CHUNYAN LAI", "target": "Energy Networks", "color": "#33CCFF"},
+
+    {"source": "CHUNYAN LAI", "target": "Intelligent Transportation System", "color": "#33CCFF"}
 
 
    
